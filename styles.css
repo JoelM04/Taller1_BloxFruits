@@ -1,0 +1,698 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: rgba(51, 51, 51, 0.9);
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header img.logo {
+    height: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 0;
+}
+
+header nav ul li a:hover {
+    color: #f39c12;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #f39c12;
+    transition: width 0.3s;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Banner principal */
+.main-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.banner-content {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.banner-content h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3rem;
+    color: #2575fc;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 1px #6a11cb;
+    text-shadow: 3px 3px 0 #ffcc00;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(106, 17, 203, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(106, 17, 203, 0.5);
+}
+
+.banner-image {
+    flex: 1;
+    text-align: center;
+}
+
+.banner-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Filtros */
+.filtros {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 0;
+    margin: 30px 0;
+}
+
+.filtros-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.filtro-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filtro-group label {
+    font-weight: bold;
+    color: #6a11cb;
+}
+
+.filtro-group select {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid #6a11cb;
+    background-color: white;
+    font-size: 1rem;
+}
+
+/* Productos */
+.productos-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.productos-section {
+    margin: 40px 0;
+}
+
+.section-title {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.5rem;
+    color: #ffcc00;
+    margin-bottom: 25px;
+    text-align: center;
+    -webkit-text-stroke: 1px #6a11cb;
+    text-shadow: 3px 3px 0 #2575fc;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.producto {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding: 15px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border: 3px solid transparent;
+    background: linear-gradient(white, white), 
+                linear-gradient(135deg, #6a11cb, #2575fc, #f39c12);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.producto-imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.producto-imagen img {
+    height: 110px;
+    width: 110px;
+    object-fit: contain;
+}
+
+.producto h3 {
+    font-size: 1.4rem;
+    color: #2575fc;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.producto-desc {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.producto-rareza {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.producto-rareza.común {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+}
+
+.producto-rareza.poco-común {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.producto-rareza.rara {
+    background-color: #3498db;
+    color: white;
+}
+
+.producto-rareza.mítica {
+    background-color: #9b59b6;
+    color: white;
+}
+
+.producto-rareza.legendaria {
+    background-color: #f1c40f;
+    color: #34495e;
+}
+
+.producto-rareza.exclusiva {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: white;
+}
+
+.btn-comprar {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-comprar:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #f39c12;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+}
+
+.footer-logo {
+    height: 200px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #34495e;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #f39c12;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+}
+
+.about-main {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Hero Section */
+.about-hero {
+    text-align: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 60px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.about-hero h1.section-title {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3rem;
+    color: #ffcc00;
+    -webkit-text-stroke: 1px #6a11cb;
+    text-shadow: 3px 3px 0 #2575fc;
+    margin-bottom: 20px;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    color: #f1f1f1;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* About Content Cards */
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.about-icon {
+    font-size: 3rem;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.about-card h2 {
+    font-size: 1.6rem;
+    color: #2575fc;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    font-size: 1rem;
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+/* Main Contact */
+.contact-main {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Hero */
+.contact-hero {
+  text-align: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 50px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.contact-hero h1.section-title {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 3rem;
+  color: #ffcc00;
+  -webkit-text-stroke: 1px #6a11cb;
+  text-shadow: 3px 3px 0 #2575fc;
+  margin-bottom: 20px;
+}
+
+.contact-hero p {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+}
+
+/* Contact Content */
+.contact-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* Formulario */
+.contact-form {
+  background: rgba(255,255,255,0.05);
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  color: #2575fc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #6a11cb;
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form select {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #6a11cb;
+  background-color: rgba(255,255,255,0.1);
+  color: #fff; /* Texto visible */
+  font-size: 1rem;
+  appearance: none; /* Quita flecha predeterminada en algunos navegadores */
+}
+
+.contact-form select option {
+  color: #000; /* Opciones visibles al desplegar */
+  background-color: #fff; /* Fondo blanco para opciones */
+}
+
+.contact-form .cta-button {
+  width: 100%;
+  margin-top: 15px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contact-form .cta-button:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  transform: scale(1.05);
+}
+
+/* Contact Info */
+.contact-info h2 {
+  font-size: 1.8rem;
+  color: #ffcc00;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255,255,255,0.05);
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-method:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.contact-icon {
+  font-size: 2.5rem;
+  color: #f39c12;
+}
+
+.contact-details h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.contact-details p {
+  margin: 3px 0;
+  color: #ccc;
+}
+
+.contact-link {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+/* FAQ */
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item h3 {
+  cursor: pointer;
+  background: rgba(255,255,255,0.05);
+  padding: 15px 20px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px 20px;
+  border-left: 3px solid #2575fc;
+  background: rgba(255,255,255,0.05);
+  border-radius: 0 15px 15px 15px;
+}
+
+.faq-answer.active {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .main-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .banner-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .banner-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .filtros-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .banner-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blox Fruits - Tienda Oficial</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <div class="header-container">
+        <img
+          class="logo"
+          src="./recursos/blox-fruits-logo.png"
+          alt="Blox Fruits Logo"
+        />
+        <nav>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acerca.html">Acerca de</a></li>
+            <li><a href="contactenos.html">Contáctenos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Banner principal -->
+    <section class="main-banner">
+      <div class="banner-content">
+        <h1>¡Colecciona todas las Frutas Mágicas!</h1>
+        <p>Descubre los peluches y artículos oficiales de Blox Fruits</p>
+        <a href="#filtros" class="cta-button">
+          Explorar ahora <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="banner-image">
+        <img src="./recursos/principal.webp" alt="Principal" />
+      </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filtros" id="filtros">
+      <div class="filtros-container">
+        <div class="filtro-group">
+          <label for="filtro-tipo">Tipo:</label>
+          <select id="filtro-tipo">
+            <option value="all">Todos</option>
+            <option value="in-game">In-Game</option>
+            <option value="real">Real</option>
+          </select>
+        </div>
+
+        <div class="filtro-group">
+          <label for="filtro-rareza">Rareza:</label>
+          <select id="filtro-rareza">
+            <option value="all">Todas</option>
+            <option value="Común">Común</option>
+            <option value="Poco Común">Poco Común</option>
+            <option value="Rara">Rara</option>
+            <option value="Mítica">Mítica</option>
+            <option value="Legendaria">Legendaria</option>
+            <option value="Exclusiva">Exclusiva</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productos separados por tipo -->
+    <main class="productos-main">
+      <section id="productos-in-game" class="productos-section">
+        <h2 class="section-title">
+          <i class="fas fa-gamepad"></i> Artículos In-Game
+        </h2>
+        <div id="lista-in-game" class="productos-grid"></div>
+      </section>
+
+      <section id="productos-real" class="productos-section">
+        <h2 class="section-title">
+          <i class="fas fa-star"></i> Productos Reales
+        </h2>
+        <div id="lista-real" class="productos-grid"></div>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <img
+            class="footer-logo"
+            src="./recursos/blox-fruits-logo.png"
+            alt="Blox Fruits Logo"
+          />
+          <p>
+            Los mejores productos oficiales de Blox Fruits con DLC exclusivos
+            para el juego.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acerca.html">Acerca de</a></li>
+            <li><a href="contactenos.html">Contáctenos</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2025 Blox Fruits - Real & In-Game Items. Todos los derechos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="productos.js"></script>
+    <script>
+      // [El código JavaScript permanece igual pero se ajusta para las nuevas clases]
+      const contenedorInGame = document.getElementById("lista-in-game");
+      const contenedorReal = document.getElementById("lista-real");
+      const filtroTipo = document.getElementById("filtro-tipo");
+      const filtroRareza = document.getElementById("filtro-rareza");
+
+      function mostrarProductos() {
+        contenedorInGame.innerHTML = "";
+        contenedorReal.innerHTML = "";
+
+        const tipoSeleccionado = filtroTipo.value;
+        const rarezaSeleccionada = filtroRareza.value;
+
+        productos.forEach((producto) => {
+          if (
+            (tipoSeleccionado === "all" ||
+              producto.tipo === tipoSeleccionado) &&
+            (rarezaSeleccionada === "all" ||
+              producto.rareza === rarezaSeleccionada)
+          ) {
+            const div = document.createElement("div");
+            div.classList.add("producto");
+            div.innerHTML = `
+                    <div class="producto-imagen">
+                        <img src="./recursos/${producto.imagen}" alt="${
+              producto.nombre
+            }">
+                    </div>
+                    <h3>${producto.nombre}</h3>
+                    <p class="producto-desc">${producto.descripcion}</p>
+                    <p class="producto-rareza ${producto.rareza
+                      .toLowerCase()
+                      .replace(" ", "-")}">${producto.rareza}</p>
+                `;
+            if (producto.tipo === "in-game") {
+              contenedorInGame.appendChild(div);
+            } else {
+              contenedorReal.appendChild(div);
+            }
+          }
+        });
+      }
+
+      // Mostrar al cargar
+      document.addEventListener("DOMContentLoaded", function () {
+        mostrarProductos();
+
+        // Actualizar al cambiar filtros
+        filtroTipo.addEventListener("change", mostrarProductos);
+        filtroRareza.addEventListener("change", mostrarProductos);
+
+        // Efecto de escritura en el banner
+        const titulo = document.querySelector(".banner-content h1");
+        const textoOriginal = titulo.textContent;
+        titulo.textContent = "";
+        let i = 0;
+        function typeWriter() {
+          if (i < textoOriginal.length) {
+            titulo.textContent += textoOriginal.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+          }
+        }
+        typeWriter();
+      });
+    </script>
+  </body>
+</html>

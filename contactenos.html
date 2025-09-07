@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contáctenos - Blox Fruits</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+            <img class="logo" href="index.html" src="./recursos/blox-fruits-logo.png" alt="Blox Fruits Logo" />
+        <nav>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acerca.html">Acerca de</a></li>
+            <li><a href="contactenos.html">Contáctenos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="contact-main">
+      <!-- Hero -->
+      <section class="contact-hero">
+        <h1 class="section-title">¡Hablemos de Blox Fruits!</h1>
+        <p>
+          ¿Tienes preguntas o sugerencias?
+          ¡Escríbenos!
+        </p>
+      </section>
+
+      <section class="contact-content">
+        <!-- Formulario -->
+        <div class="contact-form">
+          <h2>Envíanos un mensaje</h2>
+          <form>
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre completo"
+                required
+                minlength="3"
+                maxlength="50"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="asunto">Asunto:</label>
+              <select id="asunto" name="asunto" required>
+                <option value="" disabled selected>Selecciona un asunto</option>
+                <option value="pregunta">Pregunta sobre el juego</option>
+                <option value="sugerencia">Sugerencia</option>
+                <option value="colaboracion">Colaboración</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje:</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                placeholder="Escribe tu mensaje aquí..."
+                required
+                minlength="10"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="cta-button">
+              Enviar mensaje <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- Información de contacto -->
+        <div class="contact-info">
+          <h2>Otras formas de contactarnos</h2>
+          <div class="contact-method">
+            <div class="contact-icon"><i class="fab fa-discord"></i></div>
+            <div class="contact-details">
+              <h3>Discord</h3>
+              <p>Únete a nuestra comunidad</p>
+              <a href="#" class="contact-link">Enlace al servidor</a>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon"><i class="fab fa-youtube"></i></div>
+            <div class="contact-details">
+              <h3>YouTube</h3>
+              <p>Mira nuestros tutoriales</p>
+              <a href="#" class="contact-link">Canal de YouTube</a>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon"><i class="fab fa-twitter"></i></div>
+            <div class="contact-details">
+              <h3>Twitter</h3>
+              <p>Síguenos para noticias</p>
+              <a href="#" class="contact-link">@BloxFruitsOficial</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <div class="faq-item">
+          <h3>¿Es Blox Fruits gratis? <i class="fas fa-chevron-down"></i></h3>
+          <div class="faq-answer">
+            <p>
+              ¡Sí! Blox Fruits es completamente gratis para jugar en Roblox.
+              Algunos elementos dentro del juego pueden requerir Robux o moneda
+              del juego.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3>
+            ¿En qué plataformas está disponible?
+            <i class="fas fa-chevron-down"></i>
+          </h3>
+          <div class="faq-answer">
+            <p>
+              Blox Fruits está disponible en todas las plataformas que soportan
+              Roblox: PC, móviles (iOS y Android) y Xbox.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3>
+            ¿Cómo consigo frutas raras? <i class="fas fa-chevron-down"></i>
+          </h3>
+          <div class="faq-answer">
+            <p>
+              Las frutas raras pueden encontrarse explorando el mapa,
+              comprándolas en el dealer o participando en eventos especiales.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <img
+            class="footer-logo"
+            src="./recursos/blox-fruits-logo.png"
+            alt="Blox Fruits Logo"
+          />
+          <p>Tu destino definitivo para todo sobre Blox Fruits</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acerca.html">Acerca de</a></li>
+            <li><a href="contactenos.html">Contáctenos</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2025 Blox Fruits - Sitio Promocional. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Script simple para las preguntas frecuentes
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item h3");
+
+        faqItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            const answer = item.nextElementSibling;
+            answer.classList.toggle("active");
+
+            const icon = item.querySelector("i");
+            icon.classList.toggle("fa-chevron-down");
+            icon.classList.toggle("fa-chevron-up");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
